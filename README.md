@@ -5,7 +5,7 @@ UIImage+BluredFrame is a UIImage category that blurs an specified frame of a UII
 Install with [cocoapods](http://cocoapods.org/)
 
 ```
-pod 'UIImage+BluredFrame', git: 'https://github.com/Adrian2112/UIImage-BluredFrame.git'
+pod 'UIImage+BluredFrame'
 ```
 
 
