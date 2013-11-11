@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "UIImage+BlurredFrame"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "UIImage+BlurredFrame is a UIImage category that blurs an specified frame of a UIImage"
 
   s.description  = <<-DESC
