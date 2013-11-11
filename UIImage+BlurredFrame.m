@@ -1,14 +1,14 @@
 //
-//  UIImage+bluredFrame.m
+//  UIImage+blurredFrame.m
 //
 //  Created by Adrian Gzz on 04/11/13.
 //  Copyright (c) 2013 Icalia Labs. All rights reserved.
 //
 
-#import "UIImage+BluredFrame.h"
+#import "UIImage+BlurredFrame.h"
 #import "UIImage+ImageEffects.h"
 
-@implementation UIImage (BluredFrame)
+@implementation UIImage (BlurredFrame)
 
 -(UIImage *)croppedImageAtFrame:(CGRect)frame
 {
@@ -46,20 +46,20 @@
 
 - (UIImage *)applyExtraLightEffectAtFrame:(CGRect)frame
 {
-    UIImage *bluredFrame = [[self croppedImageAtFrame:frame] applyExtraLightEffect];
-    return [self addImageToImage:bluredFrame atRect:frame];
+    UIImage *blurredFrame = [[self croppedImageAtFrame:frame] applyExtraLightEffect];
+    return [self addImageToImage:blurredFrame atRect:frame];
 }
 
 - (UIImage *)applyDarkEffectAtFrame:(CGRect)frame
 {
-    UIImage *bluredFrame = [[self croppedImageAtFrame:frame] applyDarkEffect];
-    return [self addImageToImage:bluredFrame atRect:frame];
+    UIImage *blurredFrame = [[self croppedImageAtFrame:frame] applyDarkEffect];
+    return [self addImageToImage:blurredFrame atRect:frame];
 }
 
 - (UIImage *)applyTintEffectWithColor:(UIColor *)tintColor atFrame:(CGRect)frame
 {
-    UIImage *bluredFrame = [[self croppedImageAtFrame:frame] applyTintEffectWithColor:tintColor];
-    return [self addImageToImage:bluredFrame atRect:frame];
+    UIImage *blurredFrame = [[self croppedImageAtFrame:frame] applyTintEffectWithColor:tintColor];
+    return [self addImageToImage:blurredFrame atRect:frame];
 }
 
 - (UIImage *)applyBlurWithRadius:(CGFloat)blurRadius
@@ -68,8 +68,8 @@
                        maskImage:(UIImage *)maskImage
                          atFrame:(CGRect)frame
 {
-    UIImage *bluredFrame = [[self croppedImageAtFrame:frame] applyBlurWithRadius:blurRadius tintColor:tintColor saturationDeltaFactor:saturationDeltaFactor maskImage:maskImage];
-    return [self addImageToImage:bluredFrame atRect:frame];
+    UIImage *blurredFrame = [[self croppedImageAtFrame:frame] applyBlurWithRadius:blurRadius tintColor:tintColor saturationDeltaFactor:saturationDeltaFactor maskImage:maskImage];
+    return [self addImageToImage:blurredFrame atRect:frame];
 }
 
 

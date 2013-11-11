@@ -1,11 +1,11 @@
-UIImage+BluredFrame is a UIImage category that blurs an specified frame of a UIImage
+UIImage+BlurredFrame is a UIImage category that blurs an specified frame of a UIImage
 
 #Install
 
 Install with [cocoapods](http://cocoapods.org/)
 
 ```
-pod 'UIImage+BluredFrame'
+pod 'UIImage+BlurredFrame'
 ```
 
 
@@ -15,11 +15,11 @@ pod 'UIImage+BluredFrame'
 UIImage *img = [UIImage imageNamed:@"myImage"];
 CGRect frame = CGRectMake(0, img.size.height - 200, img.size.width, img.size.height - 200);
     
-img = [img applyLightBluredAtFrame:frame];
+img = [img applyLightBlurredAtFrame:frame];
 
 ```
 
-<img src="https://raw.github.com/Adrian2112/UIImage-BluredFrame/master/demo_image.png" alt="UIImage-BluredFrame demo" title="UIImage-BluredFrame demo" style="display:block; margin: 10px auto 30px auto; align:center">
+<img src="https://raw.github.com/Adrian2112/UIImage-BlurredFrame/master/demo_image.png" alt="UIImage-BlurredFrame demo" title="UIImage-BlurredFrame demo" style="display:block; margin: 10px auto 30px auto; align:center">
 
 
 ##Credits

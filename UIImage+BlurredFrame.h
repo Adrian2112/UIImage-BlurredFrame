@@ -1,5 +1,5 @@
 //
-//  UIImage+bluredFrame.h
+//  UIImage+blurredFrame.h
 //
 //  Created by Adrian Gzz on 04/11/13.
 //  Copyright (c) 2013 Icalia Labs. All rights reserved.
@@ -7,9 +7,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIImage (BluredFrame)
+@interface UIImage (BlurredFrame)
 
-- (UIImage *)applyLightBluredAtFrame:(CGRect)frame;
+- (UIImage *)applyLightBlurredAtFrame:(CGRect)frame;
 - (UIImage *)applyExtraLightEffectAtFrame:(CGRect)frame;
 - (UIImage *)applyDarkEffectAtFrame:(CGRect)frame;
 - (UIImage *)applyTintEffectWithColor:(UIColor *)tintColor atFrame:(CGRect)frame;
