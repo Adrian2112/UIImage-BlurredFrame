@@ -15,7 +15,7 @@ pod 'UIImage+BlurredFrame'
 UIImage *img = [UIImage imageNamed:@"myImage"];
 CGRect frame = CGRectMake(0, img.size.height - 200, img.size.width, img.size.height - 200);
     
-img = [img applyLightBlurredAtFrame:frame];
+img = [img applyLightEffectAtFrame:frame];
 
 ```
 
