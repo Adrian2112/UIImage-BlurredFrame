@@ -44,6 +44,12 @@
     return [self addImageToImage:bluredFrame atRect:frame];
 }
 
+- (UIImage *)applyLightEffectAtFrame:(CGRect)frame
+{
+    UIImage *blurredFrame = [[self croppedImageAtFrame:frame] applyLightEffect];
+    return [self addImageToImage:blurredFrame atRect:frame];
+}
+
 - (UIImage *)applyExtraLightEffectAtFrame:(CGRect)frame
 {
     UIImage *blurredFrame = [[self croppedImageAtFrame:frame] applyExtraLightEffect];
