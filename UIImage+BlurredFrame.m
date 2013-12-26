@@ -25,7 +25,7 @@
 - (UIImage *) addImageToImage:(UIImage *)img atRect:(CGRect)cropRect{
     
     CGSize size = CGSizeMake(self.size.width, self.size.height);
-    UIGraphicsBeginImageContext(size);
+    UIGraphicsBeginImageContextWithOptions(size, NO, self.scale);
     
     CGPoint pointImg1 = CGPointMake(0,0);
     [self drawAtPoint:pointImg1];
