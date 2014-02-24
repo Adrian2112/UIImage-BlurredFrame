@@ -75,7 +75,17 @@
                        maskImage:(UIImage *)maskImage
                          atFrame:(CGRect)frame
 {
-    UIImage *blurredFrame = [[self croppedImageAtFrame:frame] applyBlurWithRadius:blurRadius tintColor:tintColor saturationDeltaFactor:saturationDeltaFactor maskImage:maskImage];
+    return [self applyBlurWithRadius:blurRadius iterationsCount:3 tintColor:tintColor saturationDeltaFactor:saturationDeltaFactor maskImage:maskImage atFrame:frame];
+}
+
+- (UIImage *)applyBlurWithRadius:(CGFloat)blurRadius
+                 iterationsCount:(NSInteger)iterationsCount
+                       tintColor:(UIColor *)tintColor
+           saturationDeltaFactor:(CGFloat)saturationDeltaFactor
+                       maskImage:(UIImage *)maskImage
+                         atFrame:(CGRect)frame
+{
+    UIImage *blurredFrame = [[self croppedImageAtFrame:frame] applyBlurWithRadius:blurRadius iterationsCount:iterationsCount tintColor:tintColor saturationDeltaFactor:saturationDeltaFactor maskImage:maskImage];
     return [self addImageToImage:blurredFrame atRect:frame];
 }
 

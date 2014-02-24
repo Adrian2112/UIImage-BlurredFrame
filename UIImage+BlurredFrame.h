@@ -20,4 +20,10 @@
            saturationDeltaFactor:(CGFloat)saturationDeltaFactor
                        maskImage:(UIImage *)maskImage
                          atFrame:(CGRect)frame;
+- (UIImage *)applyBlurWithRadius:(CGFloat)blurRadius
+                 iterationsCount:(NSInteger)iterationsCount
+                       tintColor:(UIColor *)tintColor
+           saturationDeltaFactor:(CGFloat)saturationDeltaFactor
+                       maskImage:(UIImage *)maskImage
+                         atFrame:(CGRect)frame;
 @end
