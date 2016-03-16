@@ -10,32 +10,37 @@
 
 @implementation UIImage (BlurredFrame)
 
--(UIImage *)croppedImageAtFrame:(CGRect)frame
-{
+- (UIImage *)croppedImageAtFrame:(CGRect)frame {
     frame = CGRectMake(frame.origin.x * self.scale, frame.origin.y * self.scale, frame.size.width * self.scale, frame.size.height * self.scale);
-    CGImageRef sourceImageRef = [self CGImage];
+    UIImage *rotatedImage = self;
+    // make sure its orientation is up otherwise later on we'll have trouble merging
+    if (self.imageOrientation != UIImageOrientationUp) {
+        rotatedImage = [self addImageToImage:nil atRect:CGRectZero];
+    }
+    CGImageRef sourceImageRef = [rotatedImage CGImage];
     CGImageRef newImageRef = CGImageCreateWithImageInRect(sourceImageRef, frame);
-    UIImage *newImage = [UIImage imageWithCGImage:newImageRef scale:[self scale] orientation:[self imageOrientation]];
+    UIImage *newImage = [UIImage imageWithCGImage:newImageRef scale:[self scale] orientation:UIImageOrientationUp];
     CGImageRelease(newImageRef);
     return newImage;
 }
 
-#pragma mark - Marge two Images
+#pragma mark - Merge two Images
 
-- (UIImage *) addImageToImage:(UIImage *)img atRect:(CGRect)cropRect{
-    
-    CGSize size = CGSizeMake(self.size.width, self.size.height);
+- (UIImage *)addImageToImage:(UIImage *)img atRect:(CGRect)cropRect {
+    CGSize size = self.size;
     UIGraphicsBeginImageContextWithOptions(size, NO, self.scale);
-    
-    CGPoint pointImg1 = CGPointMake(0,0);
+  
+    CGPoint pointImg1 = CGPointMake(0, 0);
     [self drawAtPoint:pointImg1];
-    
-    CGPoint pointImg2 = cropRect.origin;
-    [img drawAtPoint: pointImg2];
-    
-    UIImage* result = UIGraphicsGetImageFromCurrentImageContext();
+  
+    if (img != nil && !CGRectEqualToRect(CGRectZero, cropRect)) {
+        CGPoint pointImg2 = cropRect.origin;
+        [img drawAtPoint:pointImg2];
+    }
+  
+    UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    
+  
     return result;
 }
 
