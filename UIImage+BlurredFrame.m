@@ -14,6 +14,7 @@
     frame = CGRectMake(frame.origin.x * self.scale, frame.origin.y * self.scale, frame.size.width * self.scale, frame.size.height * self.scale);
     UIImage *rotatedImage = self;
     // make sure its orientation is up otherwise later on we'll have trouble merging
+    // based on this gist: https://gist.github.com/aleph7/5717438
     if (self.imageOrientation != UIImageOrientationUp) {
         rotatedImage = [self addImageToImage:nil atRect:CGRectZero];
     }
